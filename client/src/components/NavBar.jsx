@@ -1,6 +1,5 @@
 import {
   Box,
-  flexbox,
   HStack,
   Link,
   IconButton,
@@ -20,7 +19,10 @@ import { GiTechnoHeart } from "react-icons/gi";
 const links = [
   { linkName: "Products", path: "/products" },
   { linkName: "SoppingCart", path: "/cart" },
+  { linkName: "SoppingCart1", path: "/cart1" },
 ];
+
+//creation modele navlink pour tous link
 
 const NavLink = ({ path, children }) => (
   <Link
@@ -28,10 +30,11 @@ const NavLink = ({ path, children }) => (
     to={path}
     px={2}
     py={2}
+    //border radius
     rounded="md"
     _hover={{ textDecoration: "none", bg: useColorModeValue("gray.200", "gray.700") }}
   >
-    {children}{" "}
+    {children}
   </Link>
 );
 
@@ -47,9 +50,11 @@ const NavBar = () => {
           display={{ md: "none" }}
           onClick={isOpen ? onClose : onOpen}
         />
-
+        
+{/* Nav left */}
         <HStack>
-          <Link as={ReactLink} to="/www">
+          <Link as={ReactLink} to="/">
+            {/* displayflex */}
             <Flex alignItems="center">
               <Icon as={GiTechnoHeart} h={6} w={6} color="orange.400" />
               <Text fontWeight="extrabold">Ecommerce</Text>
@@ -80,7 +85,7 @@ const NavBar = () => {
             as={ReactLink}
             to="/registration"
             m={2}
-            display={{md:"inline-flex"}}
+            display={{base:"none",md:"inline-flex"}}
             fontSize="sm"
             fontWeight={600}
             _hover={{ bg: "orange.400" }}
@@ -91,6 +96,8 @@ const NavBar = () => {
           </Button>
         </Flex>
       </Flex>
+      
+{/* nav bar mobile */}
       {isOpen ? (
         <Box pb={4} display={{ md: "none" }}>
           <Stack as="nav" spacing={4}>
@@ -99,6 +106,9 @@ const NavBar = () => {
                 {link.linkName}
               </NavLink>
             ))}
+            <NavLink key="sign up" path='/registration'>
+              sign up
+            </NavLink>
           </Stack>
         </Box>
       ) : null}
