@@ -25,7 +25,9 @@ const ProductsScreens = () => {
             <AlertDescription>{error}</AlertDescription>
           </Alert>
       ):(
+        
         products.map((product)=>(
+          
           <Box key={product._id}>
           <Center w="250px" h="550px">
             <ProductCard product={product} />

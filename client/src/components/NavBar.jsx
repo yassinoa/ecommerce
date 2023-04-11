@@ -51,7 +51,7 @@ const NavBar = () => {
           onClick={isOpen ? onClose : onOpen}
         />
         
-{/* Nav left */}
+            {/* Nav left */}
         <HStack>
           <Link as={ReactLink} to="/">
             {/* displayflex */}
