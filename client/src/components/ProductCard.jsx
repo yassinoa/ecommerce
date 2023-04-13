@@ -48,7 +48,7 @@ const ProductCard = ({ product }) => {
   const {cart}=cartInfo
 
   const addItem =(id)=>{
-    if(cart.some((cartItem)=>cartItem.id===id)){
+    if(cart.find((cartItem)=>cartItem.id===id)){
       toast({
         description:'This item is already in your cart .Go to your cart to change here',
         status:'error',
@@ -94,7 +94,7 @@ const ProductCard = ({ product }) => {
       </Box>
 
       <Flex mt='1' justifyContent="space-between" alignContent="center">
-        <Link as={ReactLink} to={`/product${product._id}`} pt="2" cursor="pointer">
+        <Link as={ReactLink} to={`/product/${product._id}`} pt="2" cursor="pointer">
           <Box fontSize="2xl" fontWeight="semibold" lineHeight="tight">
             {product.name}
           </Box>

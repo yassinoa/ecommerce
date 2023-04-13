@@ -17,7 +17,7 @@ const CartOrderSummery = () => {
     <Stack spacing='8' borderWidth='1px' rounded='lg' padding='8' w='full'>
       <Heading size='md'>Order Summury</Heading>
       <Stack spacing={6}>
-      <Flex justify='space-between'>
+        <Flex justify='space-between'>
           <Text fontWeight='medium' color={mode('gray.600','gray.400')}>
             Subtotal
           </Text>

@@ -17,7 +17,7 @@ const CartItem = ({cartItem}) => {
         </Box>
       </Stack>
 
-      <Flex w='full' mt={{base:'4',md:'0'}} align={{base:'center',md:'baseline'}} justify='space-between' display='flex'>
+      <Flex w='lg' mt={{base:'4',md:'0'}} align={{base:'center',md:'baseline'}} justify='space-between' display='flex'>
         <Select maxW='64px' focusBorderColor={mode('orange.500','orange.200')} value={qty}
                 onChange={(e)=>{dispatch(addCartItem(id,Number(e.target.value)))}}>
           {[...Array(stock).keys()].map((x)=>(
