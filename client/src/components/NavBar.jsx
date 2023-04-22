@@ -28,10 +28,26 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../redux/actions/userActions';
 
+
+const ShoppingCartIcon = () => {
+  const cartInfo = useSelector((state) => state.cart);
+  const { cart } = cartInfo;
+  return (
+    <Flex>
+      <Text fontStyle='italic' as='sub' fontSize='xs'>
+        {cart.length}
+      </Text>
+      <Icon ml='-1.5' as={FiShoppingCart} h='4' w='7' alignSelf='center' />
+      Cart
+    </Flex>
+  );
+};
+
+
 const links = [
   { linkName: "Products", path: "/products" },
   { linkName: "SoppingCart", path: "/cart" },
-  { linkName: "SoppingCart1", path: "/cart1" },
+  { linkName: <ShoppingCartIcon />, path: "/cart1" },
 ];
 
 //creation modele navlink pour tous link

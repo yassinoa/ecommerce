@@ -68,7 +68,7 @@ export const updateProfile = (id, name, email, password) => async (dispatch, get
   const {
     user: { userInfo },
   } = getState();
-
+  dispatch(setLoading(true));
   try {
     const config = {
       headers: {
